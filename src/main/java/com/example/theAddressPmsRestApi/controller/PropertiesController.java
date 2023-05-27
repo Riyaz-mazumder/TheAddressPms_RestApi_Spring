@@ -17,8 +17,8 @@ public class PropertiesController {
     PropertiesService ps;
 
     @GetMapping("properties/approved")
-    public List<Properties> getAllApprovedProperties(){
-     return ps.getAllApprovedProperties_();
+    public List<Properties> getAllApprovedProperties(@RequestParam(value = "page", required = false ) Integer page){
+     return ps.getAllApprovedProperties_(page);
   }
 
     @GetMapping("properties/unApproved")
@@ -50,5 +50,11 @@ public class PropertiesController {
     @GetMapping ("propertiesBySearch/{area}/{category}/{type}")
     public List<Properties> searchedProperties(@PathVariable String area,@PathVariable String category, @PathVariable String type){
         return ps.getAllApprovedPropertiesBySearch_(area,category,type);
+    }
+
+
+    @GetMapping ("propertiesBySearchByArea/{area}")
+    public List<Properties> searchedProperties(@PathVariable String area){
+        return ps.getAllApprovedPropertiesSearchByArea_(area);
     }
 }

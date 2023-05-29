@@ -41,4 +41,9 @@ public class PropertiesService {
     public List<Properties> getAllApprovedPropertiesSearchByArea_(String area){
         return pd.getApprovedPropertiesByAreaSearch(area);
 }
+
+    public List<Object[]> userDetails(Long id){
+        return pd.userDetails(id);
+    }
+
 }

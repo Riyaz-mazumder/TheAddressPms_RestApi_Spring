@@ -18,7 +18,9 @@ public class Properties extends BaseModel{
     private  String bedrooms;
     private  String bathrooms;
     private  String  size;
+    private Long userId;
     private boolean approval;
+
 
     private String image1;
     private String image2;

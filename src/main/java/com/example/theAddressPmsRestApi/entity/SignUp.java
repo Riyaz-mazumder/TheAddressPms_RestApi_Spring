@@ -12,5 +12,6 @@ public class SignUp extends BaseModel {
     private String gender;
     private LocalDate dob;
     private String password;
+    private int contactNo;
 
 }

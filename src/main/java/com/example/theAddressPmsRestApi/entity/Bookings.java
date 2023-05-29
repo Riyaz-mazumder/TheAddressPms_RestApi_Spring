@@ -27,4 +27,6 @@ public class Bookings extends BaseModel{
     private String propertyName;
     private int propertyPrice;
 
+    private Long userId;
+
 }

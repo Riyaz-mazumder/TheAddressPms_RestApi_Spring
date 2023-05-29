@@ -57,4 +57,9 @@ public class PropertiesController {
     public List<Properties> searchedProperties(@PathVariable String area){
         return ps.getAllApprovedPropertiesSearchByArea_(area);
     }
+
+    @GetMapping ("userDetails/{id}")
+    public List<Object[]> userDetailss(@PathVariable Long id){
+        return ps.userDetails(id);
+    }
 }

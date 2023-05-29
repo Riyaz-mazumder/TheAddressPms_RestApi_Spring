@@ -3,6 +3,7 @@ package com.example.theAddressPmsRestApi.controller;
 import com.example.theAddressPmsRestApi.entity.Bookings;
 
 import com.example.theAddressPmsRestApi.service.BookingsService;
+import com.example.theAddressPmsRestApi.service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,9 @@ public class BookingsController {
     @Autowired
     private BookingsService bs;
 
+    @Autowired
+    private EmailService emailService;
+
 
     @GetMapping("bookings")
     public List<Bookings> getAllBookings(){
@@ -26,6 +30,8 @@ public class BookingsController {
     @PostMapping("bookings")
     public void saveData(@RequestBody Bookings bookings){
         bs.addBookings(bookings);
+
+        emailService.sendEmail(bookings.getEmail(), "Grettings", " Thank You " + bookings.getName() + " Sir, For being with The Address Pms. We will get back to you soon. -  The Address Pms Team");
     }
 
     @GetMapping("bookings/{id}")

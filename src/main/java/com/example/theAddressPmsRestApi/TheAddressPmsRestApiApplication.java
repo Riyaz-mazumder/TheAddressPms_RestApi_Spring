@@ -20,7 +20,7 @@ public class TheAddressPmsRestApiApplication {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
 						.allowedMethods("*")
-						.allowedOrigins("https://theaddresspmsrestapispring-production.up.railway.app");
+						.allowedOrigins("https://the-address-pms.web.app");
 			}
 		};
 	}

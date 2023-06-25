@@ -12,17 +12,18 @@ import java.util.List;
 public class PropertiesService {
     @Autowired
     private PropertiesDao pd;
-//    public List<Properties> getAllApprovedProperties_(Integer page){
-//        if(page==null || page<=0){
-//            return pd.getApprovedProperties();
-//        }else{
-//            return pd.getApprovedPropertiesByPage(page);
-//        }
+    public List<Properties> getAllApprovedProperties_(Integer page){
+        if(page==null || page<=0){
+            return pd.getApprovedProperties();
+        }else{
+            return pd.getApprovedPropertiesByPage(page);
+        }
+    }
+
+//    public List<Properties> getAllApprovedProperties_(){
+//        return pd.getApprovedProperties();
 //    }
 
-    public List<Properties> getAllApprovedProperties_(){
-        return pd.getApprovedProperties();
-    }
     public List<Properties> getAllUnApprovedProperties_(){
         return pd.getUnApprovedProperties();
     }

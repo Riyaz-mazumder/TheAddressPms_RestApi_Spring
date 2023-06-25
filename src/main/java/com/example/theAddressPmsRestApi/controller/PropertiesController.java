@@ -15,10 +15,16 @@ public class PropertiesController {
     @Autowired
     PropertiesService ps;
 
+//    @GetMapping("properties/approved")
+//    public List<Properties> getAllApprovedProperties(@RequestParam(value = "page", required = false ) Integer page){
+//     return ps.getAllApprovedProperties_(page);
+//  }
+
+
     @GetMapping("properties/approved")
-    public List<Properties> getAllApprovedProperties(@RequestParam(value = "page", required = false ) Integer page){
-     return ps.getAllApprovedProperties_(page);
-  }
+    public List<Properties> getAllApprovedProperties(){
+        return ps.getAllApprovedProperties_();
+    }
 
     @GetMapping("properties/unApproved")
     public List<Properties> getAllUnApprovedProperties(){
